@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title> Quadratify </title>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
+		<link rel="shortcut icon" href="../icon/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="../style/style.css">
+	</head>
+	<body>
+		<!-- Ini container -->
+		<div class="container">
+
+			<!-- Ini top bar -->
+			<div class="top-bar">
+				<!-- Ini untuk area di sebelah kiri -->
+				<div class="left-area">
+					<span class="title-btn-exception">
+						QUADRATIFY&copy;
+					</span>
+					<span class="title-btn">
+						<a href="../../index.html">HOME</a>
+					</span>
+					<span class="title-btn">
+						<a href="soal.html" id="title-focus">SOAL</a>
+					</span>
+					<span class="title-btn">
+						<a href="quiz.html">RANDOM QUIZ</a>
+					</span>
+				</div>
+				<!-- Ini untuk area di sebelah kanan -->
+				<div class="right-area">
+					<span class="title-btn" >
+						<a href="#">ABOUT</a>
+					</span>
+				</div>
+			</div>
+
+			<!-- container untuk body -->
+			<div class="body-container">
+				<!-- Ini big title quadratify -->
+				<div class="big-title">
+					<h1>QUADRATIFY</h1>
+				</div>
+
+				<!-- Ini soal container -->
+				<div class="soal-container center" id="soal-container">
+					<h4 style="text-align: center;">Kumpulan Soal Pilihan</h4>
+					<!-- soal akan masuk kesini dari database database-soal.json -->
+				</div>
+
+				<!-- button untuk selesai menjawab soal -->
+				<div class="done-answering center" id="done-ans">
+					<span id="done-btn">
+						<button id="tool-btn" onclick="reset()">Reset</button>
+					</span>
+					<span id="done-btn">
+						<button id="tool-btn" onclick="result()">Selesai</button>
+					</span>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../script/soal.js">
+		</script>
+		<script type="text/javascript" src="../script/hasil-jawaban.js">
+		</script>
+	</body>
+</html>

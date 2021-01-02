@@ -1,0 +1,200 @@
+@keyframes side-left{
+	from{
+		left: 100%;
+		opacity: 0;
+	}
+	to{
+		left: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes side-right{
+	from{
+		right: 100%;
+		opacity: 0;
+	}
+	to{
+		right: 0px;
+		opacity: 1;
+	}
+}
+
+@keyframes fly-up{
+	from{
+		opacity: 0;
+		top: 0px;
+	}
+	to{
+		opacity: 1;
+		top: 60px;
+	}
+}
+
+/*Master style*/
+body{
+	margin: 0;
+	padding: 0;
+	background: white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+.container{
+	margin: 0;
+	padding: 0;
+}
+
+hr{
+	border: 1px solid #ff748c;
+}
+
+/*style untuk top-bar*/
+
+.top-bar{
+	z-index: 1;
+	display: flex;
+	position: fixed;
+	width: 100%;
+	justify-content: space-between;
+	top: 0;
+	left: 0;
+	background:  #ff748c;
+	font-weight: bold;
+	padding: 15px;
+	box-shadow: 0px 2px 2px grey;
+	animation-name: side-right;
+	animation-duration: 1.5s;
+}
+
+.title-btn a{
+	font-size: 0.9em;
+	text-decoration: none;
+	padding: 5px;
+	color: white;
+	padding-bottom: 2px;
+	border-bottom: 2px solid transparent;
+	/* animasi untuk hover */
+	transition: 0.5s;
+	transition-property: border;
+}
+
+.title-btn a:hover{
+	border-bottom: 2px solid white;
+}
+
+.title-btn{
+	padding-right: 10px;
+}
+
+.title-btn-exception{
+	font-size: 0.9em;
+	padding: 5px;
+	color: white;
+	font-weight: bold;
+}
+
+#title-focus{
+	border-bottom: 2px solid white;
+}
+
+.center{
+	margin: auto;
+	width: 70%;
+}
+
+.body-container{
+	position: relative;
+	top: 60px;
+	animation-name: side-right;
+	animation-duration: 1.5s;
+}
+
+/*style untuk title*/
+.big-title h1{
+	font-size: 28px;
+	position: relative;
+	align-content: center;
+	color: #ff748c;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+/*style untuk container*/
+
+.solver-container{
+	background: white;
+	padding: 20px;
+	text-align: center;
+	border: 2px solid #ff748c;
+	box-shadow: 0px 2px 4px grey;
+	
+}
+
+#tool-input{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#tool-input input{
+	border: none;
+	border: 2px solid #ff748c;
+	border-radius: 5px;
+	padding: 8px;
+	box-sizing: border-box;
+}
+
+#tool-btn{
+	border-radius: 5px;
+	color: white;
+	background-color: #ff748c;
+	font-size: 0.9em;
+	border: none;
+	padding-top: 10px;
+	padding-bottom: 10px; 
+	padding-left: 15px;
+	padding-right: 15px;
+	cursor: pointer;
+	transition: 0.5s;
+	transition-property: filter;
+}
+
+
+#tool-btn:hover{
+	filter: brightness(80%);
+}
+
+.tool-btn-container{
+	padding-right: 10px;
+}
+
+#quadratic_equation{
+	font-weight: bold;
+}
+
+#answer{
+	display: none;
+}
+
+.node-soal{
+	background: white;
+	padding: 20px;
+	text-align: left;
+	border: 2px solid #ff748c;
+	padding-top: 10px;
+	box-shadow: 0px 2px 4px grey;
+}
+
+.done-answering{
+	text-align: center;
+}
+
+#done-btn{
+	padding-right: 50px;
+	padding-left: 50px;
+	padding-bottom: 30px;
+}
+

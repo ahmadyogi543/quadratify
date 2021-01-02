@@ -1,0 +1,242 @@
+[
+	{
+		"soal": "x<sup>2</sup> + x - 12 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": 1,
+			"c": -12
+		},
+		"pilihan": {
+			"a": "3 dan -4",
+			"b": "4 dan -3",
+			"c": "-4 dan -4",
+			"d": "2 dan 1",
+			"e": "1 dan 1"
+		},
+		"rightAnswer": "a"
+	},
+	{
+		"soal": "x<sup>2</sup> - 2x - 15 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": -2,
+			"c": -15
+		},
+		"pilihan": {
+			"a": "-5 dan 4",
+			"b": "5 dan -3",
+			"c": "3 dan -5",
+			"d": "3 dan -4",
+			"e": "5 dan 3"
+		},
+		"rightAnswer": "b"
+	},
+	{
+		"soal": "x<sup>2</sup> + 4x - 12 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": 4,
+			"c": -12
+		},
+		"pilihan": {
+			"a": "-6 dan -2",
+			"b": "7 dan -3",
+			"c": "5 dan -5",
+			"d": "2 dan -6",
+			"e": "6 dan -2"
+		},
+		"rightAnswer": "d"
+	},
+	{
+		"soal": "x<sup>2</sup> + 6x = 0",
+		"koefisien": {
+			"a": 1,
+			"b": 6,
+			"c": 0
+		},
+		"pilihan": {
+			"a": "-6 dan -4",
+			"b": "6 dan 3",
+			"c": "0 dan 3",
+			"d": "0 dan 6",
+			"e": "0 dan -6"
+		},
+		"rightAnswer": "e"
+	},
+	{
+		"soal": "3x<sup>2</sup> - 4x = 0",
+		"koefisien": {
+			"a": 3,
+			"b": -4,
+			"c": 0
+		},
+		"pilihan": {
+			"a": "-12 dan 0",
+			"b": "12 dan 0",
+			"c": "-3 dan 12",
+			"d": "-3 dan 0",
+			"e": "12 dan 3"
+		},
+		"rightAnswer": "b"
+	},
+	{
+		"soal": "4x<sup>2</sup> - 9x = 0",
+		"koefisien": {
+			"a": 4,
+			"b": -9,
+			"c": 0
+		},
+		"pilihan": {
+			"a": "36 dan 0",
+			"b": "0 dan -36",
+			"c": "3 dan 6",
+			"d": "3 dan -6",
+			"e": "-3 dan -6"
+		},
+		"rightAnswer": "a"
+	},
+	{
+		"soal": "x<sup>2</sup> - 9 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": 0,
+			"c": -9
+		},
+		"pilihan": {
+			"a": "-5 dan 4",
+			"b": "5 dan -3",
+			"c": "3 dan -3",
+			"d": "-3 dan -4",
+			"e": "3 dan 3"
+		},
+		"rightAnswer": "c"
+	},
+	{
+		"soal": "x<sup>2</sup> - 49 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": 0,
+			"c": -49
+		},
+		"pilihan": {
+			"a": "-6 dan 4",
+			"b": "6 dan -6",
+			"c": "-3 dan -5",
+			"d": "7 dan -7",
+			"e": "-5 dan 7"
+		},
+		"rightAnswer": "d"
+	},
+	{
+		"soal": "9x<sup>2</sup> - 64 = 0",
+		"koefisien": {
+			"a": 9,
+			"b": 0,
+			"c": -64
+		},
+		"pilihan": {
+			"a": "-216 dan -216",
+			"b": "210 dan -210",
+			"c": "230 dan -210",
+			"d": "220 dan -220",
+			"e": "-216 dan 216"
+		},
+		"rightAnswer": "e"
+	},
+	{
+		"soal": "x<sup>2</sup> - 8x + 16 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": -8,
+			"c": 16
+		},
+		"pilihan": {
+			"a": "4 dan 4",
+			"b": "-4 dan -3",
+			"c": "-4 dan -4",
+			"d": "3 dan -4",
+			"e": "4 dan 3"
+		},
+		"rightAnswer": "a"
+	},
+	{
+		"soal": "x<sup>2</sup> + 10x + 25 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": 10,
+			"c": 25
+		},
+		"pilihan": {
+			"a": "-5 dan 4",
+			"b": "5 dan -5",
+			"c": "-5 dan -5",
+			"d": "3 dan 5",
+			"e": "4 dan 3"
+		},
+		"rightAnswer": "b"
+	},
+	{
+		"soal": "x<sup>2</sup> - 3x - 18 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": -3,
+			"c": -18
+		},
+		"pilihan": {
+			"a": "6 dan -6",
+			"b": "-3 dan 6",
+			"c": "-4 dan -4",
+			"d": "-3 dan -4",
+			"e": "3 dan 6"
+		},
+		"rightAnswer": "b"
+	},
+	{
+		"soal": "x<sup>2</sup> - 11x + 28 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": -11,
+			"c": 28
+		},
+		"pilihan": {
+			"a": "4 dan -4",
+			"b": "7 dan -7",
+			"c": "-4 dan -4",
+			"d": "7 dan 4",
+			"e": "-7 dan -4"
+		},
+		"rightAnswer": "d"
+	},
+	{
+		"soal": "x<sup>2</sup> - x - 30 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": 1,
+			"c": -30
+		},
+		"pilihan": {
+			"a": "5 dan 4",
+			"b": "-4 dan 6",
+			"c": "-5 dan -6",
+			"d": "4 dan -4",
+			"e": "5 dan -6"
+		},
+		"rightAnswer": "e"
+	},
+	{
+		"soal": "x<sup>2</sup> - 14x + 40 = 0",
+		"koefisien": {
+			"a": 1,
+			"b": -14,
+			"c": 40
+		},
+		"pilihan": {
+			"a": "-4 dan 10",
+			"b": "4 dan -4",
+			"c": "10 dan 4",
+			"d": "3 dan -4",
+			"e": "4 dan 3"
+		},
+		"rightAnswer": "c"
+	}
+]
