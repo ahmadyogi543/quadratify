@@ -2,12 +2,18 @@
 const doneAns = document.getElementById("done-ans");
 doneAns.style.display = "none";
 
+let jumlahSoal;
+
+
 //mengambil json dari assets(local storage)
 fetch('../database/database-soal.json')
 				.then(results => results.json())
 				.then((data) => startCreateSoal(data));
 
 function startCreateSoal(data){
+	//just to get a len of json
+	jumlahSoal = data.length;
+
 	for(let i = 0; i < data.length; i++){
 		//do the stuff here
 		let nomorSoal = i + 1;
@@ -71,4 +77,27 @@ function createSoal(data,nomorSoal){
 
 function reset(){
 	//uncheck radio
+
+}
+
+
+function reset(){
+	const choices = [];
+
+	//15 adalah banyak soal dari json
+	for(let i = 0; i < jumlahSoal; i++){
+		let choiceStr = "choice-x";
+		choiceStr = choiceStr.replace("x",i+1);
+		let choice = document.getElementsByClassName(choiceStr);
+		choices.push(choice);
+	}
+
+	let answer = [];
+	for(let i = 0; i < choices.length; i++){
+		for(let j = 0; j < choices[i].length; j++){
+			if(choices[i][j].checked){
+				choices[i][j].checked = false;
+			}
+		}
+	}
 }

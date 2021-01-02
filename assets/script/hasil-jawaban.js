@@ -3,21 +3,23 @@ function result(){
 	fetch('../database/database-soal.json')
 				.then(results => results.json())
 				.then((data) => startResult(data));	
+	showModal();
 }
 
 function startResult(data){
 	let answer = getAnswer(data.length);
 	let score = getScore(data,answer);
+	const notif = document.getElementById("notif");
 	if(score >= 70){
 		if(score == 100){
-			alert("Skor anda adalah: "+score+"\n anda lulus dengan nilai sempurna!");
+			notif.innerHTML = "Skor anda adalah: "+score+"<br> anda lulus dengan nilai sempurna!";
 		}
 		else{
-			alert("Skor anda adalah: "+score+"\n anda lulus!");
+			notif.innerHTML = "Skor anda adalah: "+score+"<br> anda lulus!";
 		}
 	}
 	else{
-		alert("Skor anda adalah: "+score+"\n anda tidak lulus :(");
+			notif.innerHTML = "Skor anda adalah: "+score+"<br> anda tidak lulus :(";
 	}
 }
 

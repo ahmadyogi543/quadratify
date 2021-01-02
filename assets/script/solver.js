@@ -97,6 +97,7 @@ function find(){
 
 	//validasi input dari user
 	//jika bukan angka, beri alert
+	const notif = document.getElementById("notif");
 	if(validateInput(a,b,c)){
 		//jika a bukan 0, maka merupakan pers. kuadrat
 		if(a != 0){
@@ -116,13 +117,14 @@ function find(){
 			answer.style.display = "block";
 		}
 		else{
-			alert("bukan persamaan kuadrat!");
+			notif.innerHTML = "Bukan persamaan kuadrat!";
+			showModal();
 			reset();
 		}
 	}
 	else{
-		alert("Mohon masukan input yang benar(berupa angka)!");
-		reset();
+		notif.innerHTML = "Mohon masukan input yang benar, berupa angka!";
+		showModal();
 	}	
 }
 

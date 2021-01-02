@@ -54,11 +54,16 @@ function findQuadraticRoots(x1,x2){
 	let D = koef.b**2 - 4*koef.a*koef.c;
 	let x1_ = (-koef.b + Math.sqrt(D))/(2*koef.a);
 	let x2_ = (-koef.b - Math.sqrt(D))/(2*koef.a);
-	if(x1_ == x1 && x2_ == x2 || x1_ == x2 && x2_ == x1){
-		alert("Jawaban anda benar!");
+
+	const notif = document.getElementById("notif");
+	if(x1_ == x1 && x2_ == x2 || x1_ == x2 && x2_ == x1){	
+		notif.innerHTML = "Jawaban anda benar!";
+	}
+	else if(isNaN(x1) || isNaN(x2)){
+		notif.innerHTML = "Masukan jawaban yang benar, berupa angka!";
 	}
 	else{
-		alert("Jawaban anda salah :(");
+		notif.innerHTML = "Jawaban anda salah :(";
 	}
 }
 
@@ -66,6 +71,7 @@ function check(){
 	const x1 = parseFloat(document.getElementById("x1").value);
 	const x2 = parseFloat(document.getElementById("x2").value);
 	findQuadraticRoots(x1,x2);
+	showModal();
 }
 
 //do from the load

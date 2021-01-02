@@ -31,7 +31,7 @@
 				<!-- Ini untuk area di sebelah kanan -->
 				<div class="right-area">
 					<span class="title-btn" >
-						<a href="#">ABOUT</a>
+						<a href="about.html">ABOUT</a>
 					</span>
 				</div>
 			</div>
@@ -68,10 +68,17 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>	
 
-			
+			<!-- modal ada disini -->
+			<div id="notif-modal" class="modal">
+				<div class="modal-content">
+					<span onclick="closeModal()" class="close">&times;</span>
+					<p id="notif"></p>
+				</div>
+			</div>
 		</div>
+		<script type="text/javascript" src="../script/modal.js"></script>
 		<script type="text/javascript" src="../script/solver.js"></script>
 		<script type="text/javascript" src="../script/random-quiz.js"></script>
 	</body>
