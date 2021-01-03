@@ -7,8 +7,9 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
 		<link rel="shortcut icon" href="../icon/favicon.ico"/>
 		<link rel="stylesheet" type="text/css" href="../style/style.css">
+		<link rel="stylesheet" type="text/css" href="../style/custom-radio-btn.css">
 	</head>
-	<body>
+	<body onload="reset()">
 		<!-- Ini container -->
 		<div class="container">
 
@@ -49,23 +50,26 @@
 					<h4 style="text-align: center;">Kumpulan Soal Pilihan</h4>
 					<!-- soal akan masuk kesini dari database database-soal.json -->
 				</div>
-
+				<br>
 				<!-- button untuk selesai menjawab soal -->
 				<div class="done-answering center" id="done-ans">
 					<span id="done-btn">
 						<button id="tool-btn" onclick="reset()">Reset</button>
 					</span>
+
+					<br><br>
+
 					<span id="done-btn">
 						<button id="tool-btn" onclick="result()">Selesai</button>
 					</span>
 				</div>
-			</div>
 
-			<!-- modal -->
-			<div id="notif-modal" class="modal">
-				<div class="modal-content">
-					<span onclick="closeModal()" class="close">&times;</span>
-					<p id="notif"></p>
+				<!-- modal -->
+				<div id="notif-modal" class="modal">
+					<div class="modal-content">
+						<span onclick="closeModal()" class="close">&times;</span>
+						<p id="notif"></p>
+					</div>
 				</div>
 			</div>
 		</div>

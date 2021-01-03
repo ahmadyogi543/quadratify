@@ -2,13 +2,13 @@ function result(){
 	//mengambil json dari assets(local storage)
 	fetch('../database/database-soal.json')
 				.then(results => results.json())
-				.then((data) => startResult(data));	
+				.then((data) => startResult());	
 	showModal();
 }
 
-function startResult(data){
-	let answer = getAnswer(data.length);
-	let score = getScore(data,answer);
+function startResult(){
+	let answer = getAnswer(newDataAns.length);
+	let score = getScore(newDataAns,answer);
 	const notif = document.getElementById("notif");
 	if(score >= 70){
 		if(score == 100){
