@@ -8,8 +8,9 @@
 		<link rel="shortcut icon" href="../icon/favicon.ico"/>
 		<link rel="stylesheet" type="text/css" href="../style/style.css">
 		<link rel="stylesheet" type="text/css" href="../style/custom-radio-btn.css">
+		<link rel="stylesheet" type="text/css" href="../style/spin.css">
 	</head>
-	<body onload="reset()">
+	<body>
 		<!-- Ini container -->
 		<div class="container">
 
@@ -48,19 +49,26 @@
 				<!-- Ini soal container -->
 				<div class="soal-container center" id="soal-container">
 					<h4 style="text-align: center;">Kumpulan Soal Pilihan</h4>
+
+					<div id="spin-container">
+						<br><br>
+						<div class="spin"></div>
+						<p style="color: rgba(0,0,0,0.4); font-size: 0.9em;">Mohon tunggu sebentar...</p>
+					</div>
+
 					<!-- soal akan masuk kesini dari database database-soal.json -->
 				</div>
 				<br>
 				<!-- button untuk selesai menjawab soal -->
 				<div class="done-answering center" id="done-ans">
 					<span id="done-btn">
-						<button id="tool-btn" onclick="reset()">Reset</button>
+						<button class="tool-btn" onclick="resetSoal()">Reset</button>
 					</span>
 
 					<br><br>
 
 					<span id="done-btn">
-						<button id="tool-btn" onclick="result()">Selesai</button>
+						<button class="tool-btn" onclick="result()">Selesai</button>
 					</span>
 				</div>
 
@@ -73,10 +81,13 @@
 				</div>
 			</div>
 		</div>
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+		<script type="text/javascript" src="../script/solver.js"></script>
 		<script type="text/javascript" src="../script/modal.js"></script>
-		<script type="text/javascript" src="../script/soal.js">
-		</script>
-		<script type="text/javascript" src="../script/hasil-jawaban.js">
-		</script>
+		<script type="text/javascript" src="../script/soal-generator.js"></script>
+		<script type="text/javascript" src="../script/hasil-jawaban.js"></script>
+		<script type="text/javascript" src="../script/soal.js"></script>
 	</body>
 </html>

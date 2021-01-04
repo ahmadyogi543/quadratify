@@ -8,7 +8,8 @@ function checkDiscriminant(a,b,c){
 		if(D >= 0){
 			let x1 = (-b + Math.sqrt(D))/(2*a);
 			let x2 = (-b - Math.sqrt(D))/(2*a);
-			if(Math.sqrt(D) % 1 === 0 &&  x1 % 1 === 0 && x2 % 1 === 0){
+			//jangan b = 0 dan c = 0 bersamaan
+			if(Math.sqrt(D) % 1 === 0 &&  (x1 % 1 === 0 && x2 % 1 === 0) && (b !== 0 || c !== 0)){
 				return true;
 			}
 			else{
@@ -41,11 +42,12 @@ function randomize(){
 	if(checkDiscriminant(koef.a,koef.b,koef.c)){
 		quadEqStr = createQuadraticStr(koef.a,koef.b,koef.c,quadEqStr);
 		const quadEq = document.getElementById("quadratic_equation");
-		quadEq.innerHTML =quadEqStr;	
+		quadEq.innerHTML = quadEqStr;	
 	}
 	else{
 		randomize();
 	}
+	//membersihkan inputan x1 dan x2
 	document.getElementById("x1").value = "";
 	document.getElementById("x2").value = "";
 }

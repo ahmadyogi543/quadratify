@@ -143,11 +143,11 @@ hr{
 	border: 2px solid #ff748c;
 	border-radius: 5px;
 	padding: 8px;
-	width: 30px;
+	width: 40px;
 	box-sizing: border-box;
 }
 
-#tool-btn{
+.tool-btn{
 	border-radius: 5px;
 	color: white;
 	background-color: #ff748c;
@@ -163,7 +163,7 @@ hr{
 }
 
 
-#tool-btn:hover{
+.tool-btn:hover{
 	filter: brightness(80%);
 }
 

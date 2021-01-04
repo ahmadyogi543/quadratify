@@ -1,14 +1,48 @@
+//variabel global sebagai pemegang data dari database
+let dataSoal;
+
+//mengambil data dari database dan disimpan di dataSoal
+function getDB(data){
+	dataSoal = data;
+}
+
+//fungsi untuk meremove elemen soal
+function removeElements(elements){
+	while(elements[0] != undefined){
+		elements[0].remove();
+	}
+}
+
+//fungsi ini akan dipanggil setelah user mengklik tombol reset
+function startReset(data){
+	//soal akan di acak
+	let newData = shuffle(data);
+	//tampilkan soal ke layar
+	startCreateSoal(newData);
+}
+
+//fungsi yang akan dijalankan ketika user menglik tombol reset
+function resetSoal(){
+	//menghapus elemen soal berdasarkan class
+	const nS = document.getElementsByClassName("node-soal");
+	removeElements(nS);
+	//menghapus elemen br
+	const br = document.getElementsByClassName("breakline-soal");
+	removeElements(br);
+
+	startReset(dataSoal);
+}
+
+//fungsi yang akan dipanggil ketika user mengklik tombol selesai
 function result(){
-	//mengambil json dari assets(local storage)
-	fetch('../database/database-soal.json')
-				.then(results => results.json())
-				.then((data) => startResult());	
+	startResult(dataSoal);
 	showModal();
 }
 
-function startResult(){
-	let answer = getAnswer(newDataAns.length);
-	let score = getScore(newDataAns,answer);
+//fungsi start result untuk menampilkan pesan ke user di modal
+function startResult(data){
+	let answer = getAnswer(data);
+	let score = getScore(data,answer);
 	const notif = document.getElementById("notif");
 	if(score >= 70){
 		if(score == 100){
@@ -23,11 +57,13 @@ function startResult(){
 	}
 }
 
+
+//fungsi untuk mendapatkan jawaban dari user
 function getAnswer(data){
 	const choices = [];
 
 	//15 adalah banyak soal dari json
-	for(let i = 0; i < data; i++){
+	for(let i = 0; i < data.length; i++){
 		let choiceStr = "choice-x";
 		choiceStr = choiceStr.replace("x",i+1);
 		let choice = document.getElementsByClassName(choiceStr);
@@ -58,8 +94,7 @@ function getAnswer(data){
 	return answer;
 }
 
-
-//masih bug
+//perhitungan skor
 function getScore(data,answer){
 	let count = 0;
 	for(let i = 0; i < answer.length; i++){
