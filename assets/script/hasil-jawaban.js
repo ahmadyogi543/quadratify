@@ -64,9 +64,9 @@ function getAnswer(data){
 
 	//15 adalah banyak soal dari json
 	for(let i = 0; i < data.length; i++){
-		let choiceStr = "choice-x";
+		let choiceStr = "soal_x";
 		choiceStr = choiceStr.replace("x",i+1);
-		let choice = document.getElementsByClassName(choiceStr);
+		let choice = document.getElementsByName(choiceStr);
 		choices.push(choice);
 	}
 

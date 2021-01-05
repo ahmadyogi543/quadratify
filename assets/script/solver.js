@@ -1,4 +1,7 @@
 
+let historyRef = database.ref("history");
+
+
 //fungsi untuk menghitung akar kuadrat
 function quadraticRoots(a,b,c){
 	const roots = document.getElementById("roots");
@@ -9,7 +12,6 @@ function quadraticRoots(a,b,c){
 			//dua akar penyelesaian
 			let x1 = (-b + Math.sqrt(D))/(2*a);
 			let x2 = (-b - Math.sqrt(D))/(2*a);
-			console.log(x2);
 			let ans = "Karena D = " + D + ", maka akar - akarnya adalah " + x1 + " dan " + x2;
 			roots.innerHTML = ans;
 
@@ -89,6 +91,45 @@ function validateInput(a,b,c){
 	return !isNaN(a) && !isNaN(b) && !isNaN(c);
 }
 
+function getTanggal(){
+	let d = new Date();
+	let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	let hour = d.getHours();
+	let minute = d.getMinutes();
+	let second = d.getSeconds();
+	let day = d.getDay();
+	let month = months[d.getMonth()];
+	let year = d.getFullYear();
+	return day + " " + month + " " + year + ", " + hour + ":" + minute + ":" + second;
+}
+
+//fungsi membuat soal
+function getSoalNew(a_,b_,c_){
+	let quadEqStr = "ax<sup>2</sup> + bx + c = 0";
+	if(checkDiscriminant(a_,b_,c_)){
+		let D = b_**2 - 4*a_*c_;
+		let x1_ = (-b_ + Math.sqrt(D))/(2*a_);
+		let x2_ = (-b_ - Math.sqrt(D))/(2*a_);
+		quadEqStr = createQuadraticStr(a_,b_,c_,quadEqStr);
+		let choices = createChoices(x1_,x2_);
+		let question = {
+			soal: quadEqStr,
+			tanggal: getTanggal(),
+			diskriminan: D,
+			akar: {
+				x1: x1_,
+				x2: x2_
+			}
+		};
+		return question;
+	}
+}
+
+function pushQuadraticEqToDB(a,b,c){
+	let soal = getSoalNew(a,b,c);
+	historyRef.push(soal);
+}
+
 function find(){
 	//koefisien hanya untuk integer
 	let a = parseInt(document.getElementById("a").value);
@@ -115,6 +156,9 @@ function find(){
 
 			//menampilkan jawaban
 			answer.style.display = "block";
+
+			//kirim soal ke database
+			pushQuadraticEqToDB(a,b,c);
 		}
 		else{
 			notif.innerHTML = "Bukan persamaan kuadrat!";

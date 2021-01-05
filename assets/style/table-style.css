@@ -1,0 +1,30 @@
+#history-table{
+    text-align: center;
+    border-collapse: collapse;
+    margin: auto;
+    width: 80%;
+}
+
+#history-table td, #history-table th{
+    border: 1px solid grey;
+    padding: 4px;
+}
+
+#history-table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+#history-table tr:hover{
+    background-color: #ddd;
+}
+
+#history-table th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #ff748c;
+    color: white;
+}
+
+#table-container{
+    text-align: center;
+}

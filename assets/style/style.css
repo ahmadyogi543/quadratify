@@ -102,7 +102,7 @@ hr{
 
 .center{
 	margin: auto;
-	width: 70%;
+	width: 75%;
 }
 
 .body-container{
@@ -186,7 +186,6 @@ hr{
 	text-align: left;
 	border: 3px dashed #ff748c;
 	padding-top: 10px;
-	box-shadow: 0px 2px 4px grey;
 }
 
 .done-answering{
@@ -194,9 +193,9 @@ hr{
 }
 
 #done-btn{
-	padding-right: 50px;
-	padding-left: 50px;
-	padding-bottom: 30px;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-bottom: 50px;
 }
 
 .card-item-container{
@@ -250,7 +249,7 @@ hr{
 }
 
 .modal-content{
-	background-color: #fefefe;
+	background-color: white;
 	margin: auto;
 	padding: 20px;
 	border: 2px solid #ff748c;
@@ -271,6 +270,26 @@ hr{
 }
 
 
-input[type="radio"]{
-	cursor: pointer;
+#history{
+	text-align: center;
+	padding: 5px;
+	text-decoration: none;
+	color: #ff748c;
+	width: 50px;
+	height: 50px;
+}
+
+#history a{
+	color: #ff748c;
+	text-decoration: none;
+	transition: 0.5s;
+	transition-property: filter;
+}
+
+#history a:hover{
+	filter: brightness(50%);
+}
+
+#history a img{
+	width: 35px;
 }

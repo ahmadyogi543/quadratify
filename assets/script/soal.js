@@ -1,16 +1,3 @@
-hideOrShowButton("hide");
-
-// Your web app's Firebase configuration
-let firebaseConfig = {
-	apiKey: "AIzaSyCTuxvM2N03WiqUUt59uM-wDTNp2CAwpC0",
-	authDomain: "quadratify-27605.firebaseapp.com",
-	databaseURL: "https://quadratify-27605-default-rtdb.firebaseio.com",
-	projectId: "quadratify-27605",
-	storageBucket: "quadratify-27605.appspot.com",
-	messagingSenderId: "1044231705591",
-	appId: "1:1044231705591:web:f8300ffb3171c7adcb54f2"
-};
-
 //mendisplay soal ke layar
 function displayQuestion(data,nomorSoal){
 	//ambil elemen soal container sebagai parent dari kumpulan - kumpulan soal
@@ -35,19 +22,37 @@ function displayQuestion(data,nomorSoal){
 	//5 buah pilihan ganda
 	let pilgan = ['a','b','c','d','e'];
 	for(let i = 0; i < 5; i++){
-		//membuat elemen input
-		let choice = document.createElement("input");
-		choice.value = pilgan[i];
-		choice.type = "radio";
-		choice.name = "choice-x";
-		choice.name = choice.name.replace("x",nomorSoal);
-		choice.className = choice.name;
-		choicesContainer.appendChild(choice);
+		//membuat label
+		let radio = document.createElement("label");
+		radio.className = "radio";
+		let radioStr = "soalx_pg";
+		radioStr = radioStr.replace("x",nomorSoal);
+		radioStr = radioStr.replace("pg",pilgan[i]);
+		radio.setAttribute("for",radioStr);
 
-		//isi jawaban
-		let text = document.createElement("span");
-		text.innerHTML = data["pilihan"][pilgan[i]];
-		choicesContainer.appendChild(text);
+		//create input
+		let radioInput = document.createElement("input");
+		radioInput.type = "radio";
+		let radioInputStr = "soal_x";
+		radioInputStr = radioInputStr.replace("x",nomorSoal);
+		radioInput.setAttribute("name",radioInputStr);
+		radioInput.id = radioStr;
+		radioInput.className = "radio__input";
+		radioInput.value = pilgan[i];
+		radio.appendChild(radioInput);
+
+		//create div for custom radio btn
+		let radioBtn = document.createElement("div");
+		radioBtn.className = "radio__radio";
+		radio.appendChild(radioBtn);
+
+		//soal using span
+		let pilganSoal = document.createElement("span");
+		pilganSoal.innerHTML = data["pilihan"][pilgan[i]];
+		radio.appendChild(pilganSoal);
+
+		//insert the radio to btn container
+		choicesContainer.appendChild(radio);
 
 		//breakline karena berbentuk span
 		choicesContainer.appendChild(document.createElement("br"));
@@ -74,16 +79,9 @@ function startCreateSoal(data){
 	getDB(data);
 }
 
-function hideOrShowButton(state){
-	const btn = document.getElementsByClassName("tool-btn");
-	for(let i = 0; i < btn.length; i++){
-		if(state === "hide"){
-			btn[i].style.display = "none";
-		}
-		else{
-			btn[i].style.display = "inline";
-		}
-	}
+function showButton(){
+	const btnAll = document.getElementById("done-ans");
+	btnAll.style.display = "block";
 }
 
 function hideSpin(){
@@ -95,12 +93,11 @@ function hideSpin(){
 function getData(data){
 	data = data.val();
 	let keys = Object.keys(data);
-	console.log(keys.length);
 	let soal = data[keys[Math.floor(Math.random()*keys.length)]];
 	soal = shuffle(soal);
 	startCreateSoal(soal);
 	hideSpin();
-	hideOrShowButton("show");
+	showButton();
 }
 
 //fungsi apa bila pengambilan data dari database mengalami error
@@ -109,11 +106,7 @@ function errData(err){
 	console.log(err);
 }
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
 //global variables
-const database = firebase.database();
 const soalRef = database.ref("soal");
 
 //mengambil data dari database
