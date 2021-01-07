@@ -1,7 +1,8 @@
-
 let historyRef = database.ref("history");
 
-historyRef.on("value",getData,errData);
+setTimeout(function() {
+	historyRef.on("value",getData,errData);
+}, 2000);
 
 function createTable(data,nomor){
 	const table = document.getElementById("history-table");
@@ -33,15 +34,21 @@ function createTable(data,nomor){
 
 function getData(data){
 	data = data.val();
-	let keys = Object.keys(data);
+	if(data !== null){
+		let keys = Object.keys(data);
 
-	//display it to the screen via table
-	for(let i = 0; i < keys.length; i++){
-		createTable(data[keys[i]],i+1);
+		//display it to the screen via table
+		for(let i = 0; i < keys.length; i++){
+			createTable(data[keys[i]],i+1);
+		}
+
+		document.getElementById("spin-container").style.display = "none";
+		document.getElementById("history-table-container").style.display = "block";
 	}
-
-	document.getElementById("spin-container").style.display = "none";
-	document.getElementById("history-table-container").style.display = "block";
+	else{
+		document.getElementById("spin-container").style.display = "none";
+		document.getElementById("history-table-container").style.display = "block";
+	}
 }
 
 //fungsi apa bila pengambilan data dari database mengalami error

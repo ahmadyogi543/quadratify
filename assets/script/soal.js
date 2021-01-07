@@ -110,6 +110,10 @@ function errData(err){
 const soalRef = database.ref("soal");
 
 //mengambil data dari database
-soalRef.on("value",getData,errData);
+//tunggu 2 detik
+setTimeout(runSoal,2000);
+function runSoal(){
+	soalRef.on("value",getData,errData);	
+}
 
 //soalRef.push(getQuestions(15));

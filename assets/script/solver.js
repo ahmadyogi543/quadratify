@@ -12,6 +12,10 @@ function quadraticRoots(a,b,c){
 			//dua akar penyelesaian
 			let x1 = (-b + Math.sqrt(D))/(2*a);
 			let x2 = (-b - Math.sqrt(D))/(2*a);
+			if(Math.sqrt(D) % 1 != 0){
+				x1 = x1.toFixed(2);
+				x2 = x2.toFixed(2);
+			}
 			let ans = "Karena D = " + D + ", maka akar - akarnya adalah " + x1 + " dan " + x2;
 			roots.innerHTML = ans;
 
@@ -94,22 +98,28 @@ function validateInput(a,b,c){
 function getTanggal(){
 	let d = new Date();
 	let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+	let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 	let hour = d.getHours();
 	let minute = d.getMinutes();
 	let second = d.getSeconds();
-	let day = d.getDay();
+	let day = days[d.getDay()];
+	let date = d.getDate();
 	let month = months[d.getMonth()];
 	let year = d.getFullYear();
-	return day + " " + month + " " + year + ", " + hour + ":" + minute + ":" + second;
+	return day + ", " + date + " " + month + " " + year + " " + hour + ":" + minute + ":" + second;
 }
 
 //fungsi membuat soal
 function getSoalNew(a_,b_,c_){
-	let quadEqStr = "ax<sup>2</sup> + bx + c = 0";
-	if(checkDiscriminant(a_,b_,c_)){
-		let D = b_**2 - 4*a_*c_;
+	let D = b_**2 - 4*a_*c_;
+	if(D >= 0){
+		let quadEqStr = "ax<sup>2</sup> + bx + c = 0";
 		let x1_ = (-b_ + Math.sqrt(D))/(2*a_);
 		let x2_ = (-b_ - Math.sqrt(D))/(2*a_);
+		if(Math.sqrt(D) % 1 != 0){
+			x1_ = x1_.toFixed(2);
+			x2_ = x2_.toFixed(2);
+		}
 		quadEqStr = createQuadraticStr(a_,b_,c_,quadEqStr);
 		let choices = createChoices(x1_,x2_);
 		let question = {

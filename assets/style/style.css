@@ -1,33 +1,12 @@
-@keyframes side-left{
+/*animation*/
+@keyframes opaque{
 	from{
-		left: 100%;
+		transform: scale(0.5);
 		opacity: 0;
 	}
 	to{
-		left: 0px;
+		transform: scale(1);
 		opacity: 1;
-	}
-}
-
-@keyframes side-right{
-	from{
-		right: 100%;
-		opacity: 0;
-	}
-	to{
-		right: 0px;
-		opacity: 1;
-	}
-}
-
-@keyframes fly-up{
-	from{
-		opacity: 0;
-		top: 0px;
-	}
-	to{
-		opacity: 1;
-		top: 60px;
 	}
 }
 
@@ -108,7 +87,7 @@ hr{
 .body-container{
 	position: relative;
 	top: 60px;
-	animation-name: side-right;
+	animation-name: opaque;
 	animation-duration: 1.5s;
 }
 
@@ -139,6 +118,7 @@ hr{
 }
 
 #tool-input input{
+	outline: none;
 	border: none;
 	border: 2px solid #ff748c;
 	border-radius: 5px;
@@ -147,7 +127,12 @@ hr{
 	box-sizing: border-box;
 }
 
+#tool-input input:focus{
+	box-shadow: 0px 0px 6px #ff748c;
+}
+
 .tool-btn{
+	outline: none;
 	border-radius: 5px;
 	color: white;
 	background-color: #ff748c;
@@ -162,6 +147,9 @@ hr{
 	transition-property: filter;
 }
 
+.tool-btn:focus{
+	box-shadow: 0px 0px 6px #ff748c;
+}
 
 .tool-btn:hover{
 	filter: brightness(80%);
