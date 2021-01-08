@@ -11,10 +11,11 @@
 }
 
 /*Master style*/
-body{
+body{	
 	margin: 0;
 	padding: 0;
-	background: #f5f5f5;
+	background-size: 100%;
+ 	background: #fafafa;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -23,12 +24,11 @@ body{
 }
 
 .container{
+	position: absolute;
 	margin: 0;
 	padding: 0;
-}
-
-hr{
-	border: 1px solid #ff748c;
+	width: 100%;
+	height: 100%;
 }
 
 /*style untuk top-bar*/
@@ -104,12 +104,11 @@ hr{
 /*style untuk container*/
 
 .solver-container{
+	position: relative;
 	background: white;
 	padding: 20px;
 	text-align: center;
 	border: 3px dashed #ff748c;
-	
-	
 }
 
 #tool-input{
@@ -125,10 +124,12 @@ hr{
 	padding: 8px;
 	width: 40px;
 	box-sizing: border-box;
+	transition: 0.5s;
+	transition-property: box-shadow;
 }
 
 #tool-input input:focus{
-	box-shadow: 0px 0px 6px #ff748c;
+	box-shadow: 0px 0px 8px #ff748c;
 }
 
 .tool-btn{
@@ -144,15 +145,17 @@ hr{
 	padding-right: 10px;
 	cursor: pointer;
 	transition: 0.5s;
-	transition-property: filter;
+	transition-property: box-shadow,filter;
 }
 
 .tool-btn:focus{
+	filter: brightness(90%);
 	box-shadow: 0px 0px 6px #ff748c;
 }
 
 .tool-btn:hover{
-	filter: brightness(80%);
+	filter: brightness(90%);
+	box-shadow: 0px 0px 8px #ff748c;
 }
 
 .tool-btn-container{
@@ -241,7 +244,7 @@ hr{
 	margin: auto;
 	padding: 20px;
 	border: 2px solid #ff748c;
-	width: 80%;
+	width: 70%;
 }
 
 .close{

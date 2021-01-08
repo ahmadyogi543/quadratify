@@ -98,7 +98,7 @@ function validateInput(a,b,c){
 function getTanggal(){
 	let d = new Date();
 	let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-	let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+	let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 	let hour = d.getHours();
 	let minute = d.getMinutes();
 	let second = d.getSeconds();
@@ -106,6 +106,20 @@ function getTanggal(){
 	let date = d.getDate();
 	let month = months[d.getMonth()];
 	let year = d.getFullYear();
+
+	//adding 0 to hour, minute and second if < 10
+	if(hour < 10){
+		hour = "0" + hour;
+	}
+
+	if(minute < 10){
+		minute = "0" + minute;
+	}
+
+	if(second < 10){
+		second = "0" + second;
+	}
+
 	return day + ", " + date + " " + month + " " + year + " " + hour + ":" + minute + ":" + second;
 }
 

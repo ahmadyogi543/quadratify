@@ -116,4 +116,5 @@ function runSoal(){
 	soalRef.on("value",getData,errData);	
 }
 
+//ini untuk membuat soal baru
 //soalRef.push(getQuestions(15));

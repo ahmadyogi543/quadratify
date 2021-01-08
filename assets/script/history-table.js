@@ -7,6 +7,7 @@ setTimeout(function() {
 function createTable(data,nomor){
 	const table = document.getElementById("history-table");
 	let tr = document.createElement("tr");
+	tr.className = "tr-data";
 	let td = document.createElement("td");
 	td.innerHTML = nomor;
 	tr.appendChild(td);
@@ -32,9 +33,18 @@ function createTable(data,nomor){
 	table.appendChild(tr);
 }
 
+function deleteTable(){
+	const tr = document.getElementsByClassName("tr-data");
+	while(tr[0] != undefined){
+		tr[0].remove();
+	}
+}
+
 function getData(data){
 	data = data.val();
 	if(data !== null){
+		//menghapus table sebelum diload kembali
+		deleteTable();
 		let keys = Object.keys(data);
 
 		//display it to the screen via table
