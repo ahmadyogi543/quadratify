@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<title> Quadratify </title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
-		<link rel="shortcut icon" href="assets/icon/favicon.ico"/>
-		<link rel="stylesheet" type="text/css" href="assets/style/style.css">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Quadratify</title>
+		<link rel="shortcut icon" href="assets/icon/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+			integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" type="text/css" href="assets/style/style.css" />
 	</head>
 	<body>
 		<!-- Ini container -->
@@ -15,11 +27,12 @@
 			<div class="top-bar">
 				<!-- Ini untuk area di sebelah kiri -->
 				<div class="left-area">
-					<span class="title-btn-exception">
-						QUADRATIFY&copy;
-					</span>
+					<span class="title-btn-exception"> QUADRATIFY&copy; </span>
 					<span class="title-btn">
 						<a href="index.html" id="title-focus">HOME</a>
+					</span>
+					<span class="title-btn">
+						<a href="assets/pages/materi.html">MATERI</a>
 					</span>
 					<span class="title-btn">
 						<a href="assets/pages/soal.html">SOAL</a>
@@ -30,7 +43,7 @@
 				</div>
 				<!-- Ini untuk area di sebelah kanan -->
 				<div class="right-area">
-					<span class="title-btn" >
+					<span class="title-btn">
 						<a href="assets/pages/about.html">ABOUT</a>
 					</span>
 				</div>
@@ -40,52 +53,66 @@
 			<div class="body-container">
 				<!-- Ini big title quadratify -->
 				<div class="big-title">
-						<h1>QUADRATIFY</h1>
+					<h1>QUADRATIFY</h1>
 				</div>
 
 				<!-- Ini quadratify solver container -->
 				<div class="solver-container center">
 					<h4>Quadratic Roots Solver</h4>
-					<p>Masukan koefisien - koefisien persamaan kuadrat yang ingin anda cari akarnya!</p>
-					<p><b>ax<sup>2</sup> + bx + c = 0</b></p>
+					<p>
+						Masukan koefisien - koefisien persamaan kuadrat yang
+						ingin anda cari akarnya!
+					</p>
+					<p>
+						<b>ax<sup>2</sup> + bx + c = 0</b>
+					</p>
 
 					<!-- Ini container untuk tool koefisien -->
 					<div class="tool-container">
 						<label id="tool-input">
-							a = <input type="text" size="1" id="a">		
+							a = <input type="text" size="1" id="a" />
 						</label>
 						<label id="tool-input">
-							b = <input type="text" size="1" id="b">	
+							b = <input type="text" size="1" id="b" />
 						</label>
 						<label id="tool-input">
-							c = <input type="text" size="1" id="c">	
+							c = <input type="text" size="1" id="c" />
 						</label>
-						<br><br>
+						<br /><br />
 						<!-- ini container untuk button find dan reset -->
 						<div class="btn-container">
 							<span class="tool-btn-container">
-								<button class="tool-btn" onclick="reset()">Reset</button>
+								<button class="tool-btn" onclick="reset()">
+									Reset
+								</button>
 							</span>
 							<span class="tool-btn-container">
-								<button class="tool-btn" onclick="find()">Find</button>
+								<button class="tool-btn" onclick="find()">
+									Find
+								</button>
 							</span>
 						</div>
 					</div>
 
 					<div id="answer">
 						<h4>Solusi penyelesaian untuk persamaan:</h4>
-						<p id="quadratic_equation"> ax<sup>2</sup> + bx + c = 0 </p>
-						<p id="roots" style="font-weight: bold;"></p>
+						<p id="quadratic_equation">
+							ax<sup>2</sup> + bx + c = 0
+						</p>
+						<p id="roots" style="font-weight: bold"></p>
 						<div id="history" class="center">
-						<a href="assets/pages/history.html">
-							<img src="assets/icon/history.png" alt="history">
-							<span style="font-size: 0.8em;">History</span>
-						</a>
+							<a href="assets/pages/history.html">
+								<img
+									src="assets/icon/history.png"
+									alt="history"
+								/>
+								<span style="font-size: 1em">History</span>
+							</a>
+						</div>
 					</div>
-					</div>
-					<br>
+					<br />
 				</div>
-				<br><br>
+				<br /><br />
 			</div>
 
 			<!-- modal -->
@@ -99,8 +126,14 @@
 		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-		<script type="text/javascript" src="assets/script/calling-firebase.js"></script>
-		<script type="text/javascript" src="assets/script/soal-generator.js"></script>
+		<script
+			type="text/javascript"
+			src="assets/script/calling-firebase.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="assets/script/soal-generator.js"
+		></script>
 		<script type="text/javascript" src="assets/script/modal.js"></script>
 		<script type="text/javascript" src="assets/script/solver.js"></script>
 	</body>

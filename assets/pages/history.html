@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<title> Quadratify </title>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"> 
-		<link rel="shortcut icon" href="../icon/favicon.ico"/>
-		<link rel="stylesheet" type="text/css" href="../style/spin.css">
-		<link rel="stylesheet" type="text/css" href="../style/table-style.css">
-		<link rel="stylesheet" type="text/css" href="../style/style.css">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>History - Quadratify</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="shortcut icon" href="../icon/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="../style/spin.css" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="../style/table-style.css"
+		/>
+		<link rel="stylesheet" type="text/css" href="../style/style.css" />
 	</head>
 	<body>
 		<!-- Ini container -->
@@ -17,11 +24,12 @@
 			<div class="top-bar">
 				<!-- Ini untuk area di sebelah kiri -->
 				<div class="left-area">
-					<span class="title-btn-exception">
-						QUADRATIFY&copy;
-					</span>
+					<span class="title-btn-exception"> QUADRATIFY&copy; </span>
 					<span class="title-btn">
 						<a href="../../index.html" id="title-focus">HOME</a>
+					</span>
+					<span class="title-btn">
+						<a href="/assets/pages/materi.html">MATERI</a>
 					</span>
 					<span class="title-btn">
 						<a href="../pages/soal.html">SOAL</a>
@@ -32,7 +40,7 @@
 				</div>
 				<!-- Ini untuk area di sebelah kanan -->
 				<div class="right-area">
-					<span class="title-btn" >
+					<span class="title-btn">
 						<a href="../pages/about.html">ABOUT</a>
 					</span>
 				</div>
@@ -42,21 +50,23 @@
 			<div class="body-container">
 				<!-- Ini big title quadratify -->
 				<div class="big-title">
-						<h1>QUADRATIFY</h1>
+					<h1>QUADRATIFY</h1>
 				</div>
 
 				<div id="table-container">
-					<h4 style="font-size: 0.9em;">RIWAYAT PERSAMAAN KUADRAT</h4>
+					<h4 style="font-size: 0.9em">RIWAYAT PERSAMAAN KUADRAT</h4>
 
 					<div id="spin-container">
-						<br><br>
+						<br /><br />
 						<div class="spin"></div>
-						<p style="color: rgba(0,0,0,0.4); font-size: 0.9em;">Mohon tunggu sebentar...</p>
+						<p style="color: rgba(0, 0, 0, 0.4); font-size: 0.9em">
+							Mohon tunggu sebentar...
+						</p>
 					</div>
 
-					<div id="history-table-container" style="display: none;">
+					<div id="history-table-container" style="display: none">
 						<!-- table history -->
-						<table id="history-table" style="font-size: 0.9em;">
+						<table id="history-table" style="font-size: 0.9em">
 							<tr>
 								<th>No.</th>
 								<th>Soal</th>
@@ -67,8 +77,8 @@
 						</table>
 					</div>
 				</div>
-				
-				<br><br>
+
+				<br /><br />
 			</div>
 
 			<!-- modal -->
@@ -82,7 +92,13 @@
 		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
 		<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-		<script type="text/javascript" src="../script/calling-firebase.js"></script>
-		<script type="text/javascript" src="../script/history-table.js"></script>
+		<script
+			type="text/javascript"
+			src="../script/calling-firebase.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="../script/history-table.js"
+		></script>
 	</body>
 </html>

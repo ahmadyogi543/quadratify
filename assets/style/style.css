@@ -1,29 +1,29 @@
 /*animation*/
-@keyframes opaque{
-	from{
+@keyframes opaque {
+	from {
 		transform: scale(0.5);
 		opacity: 0;
 	}
-	to{
+	to {
 		transform: scale(1);
 		opacity: 1;
 	}
 }
 
 /*Master style*/
-body{	
+body {
 	margin: 0;
 	padding: 0;
 	background-size: 100%;
- 	background: #fafafa;
-	font-family: 'Open Sans', sans-serif;
+	background: #fafafa;
 }
 
-*{
+* {
 	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
 }
 
-.container{
+.container {
 	position: absolute;
 	margin: 0;
 	padding: 0;
@@ -33,7 +33,7 @@ body{
 
 /*style untuk top-bar*/
 
-.top-bar{
+.top-bar {
 	z-index: 1;
 	display: flex;
 	position: fixed;
@@ -41,13 +41,13 @@ body{
 	justify-content: space-between;
 	top: 0;
 	left: 0;
-	background:  #ff748c;
+	background: #ff748c;
 	font-weight: bolder;
 	padding: 15px;
 	font-size: 0.9em;
 }
 
-.title-btn a{
+.title-btn a {
 	font-size: 0.9em;
 	text-decoration: none;
 	padding: 0px;
@@ -59,31 +59,31 @@ body{
 	transition-property: border;
 }
 
-.title-btn a:hover{
+.title-btn a:hover {
 	border-bottom: 2px solid white;
 }
 
-.title-btn{
+.title-btn {
 	padding-right: 10px;
 }
 
-.title-btn-exception{
+.title-btn-exception {
 	font-size: 0.9em;
 	padding: 5px;
 	color: white;
 	font-weight: bold;
 }
 
-#title-focus{
+#title-focus {
 	border-bottom: 2px solid white;
 }
 
-.center{
+.center {
 	margin: auto;
 	width: 75%;
 }
 
-.body-container{
+.body-container {
 	position: relative;
 	top: 60px;
 	animation-name: opaque;
@@ -91,8 +91,9 @@ body{
 }
 
 /*style untuk title*/
-.big-title h1{
+.big-title h1 {
 	font-size: 28px;
+	font-weight: 600;
 	position: relative;
 	align-content: center;
 	color: #ff748c;
@@ -102,7 +103,7 @@ body{
 
 /*style untuk container*/
 
-.solver-container{
+.solver-container {
 	position: relative;
 	background: white;
 	padding: 20px;
@@ -110,12 +111,12 @@ body{
 	border: 3px dashed #ff748c;
 }
 
-#tool-input{
+#tool-input {
 	margin-left: 5px;
 	margin-right: 5px;
 }
 
-#tool-input input{
+#tool-input input {
 	outline: none;
 	border: none;
 	border: 2px solid #ff748c;
@@ -127,11 +128,11 @@ body{
 	transition-property: box-shadow;
 }
 
-#tool-input input:focus{
+#tool-input input:focus {
 	box-shadow: 0px 0px 8px #ff748c;
 }
 
-.tool-btn{
+.tool-btn {
 	outline: none;
 	border-radius: 5px;
 	color: white;
@@ -139,38 +140,38 @@ body{
 	font-size: 0.9em;
 	border: none;
 	padding-top: 10px;
-	padding-bottom: 10px; 
+	padding-bottom: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
 	cursor: pointer;
 	transition: 0.5s;
-	transition-property: box-shadow,filter;
+	transition-property: box-shadow, filter;
 }
 
-.tool-btn:focus{
+.tool-btn:focus {
 	filter: brightness(90%);
 	box-shadow: 0px 0px 6px #ff748c;
 }
 
-.tool-btn:hover{
+.tool-btn:hover {
 	filter: brightness(90%);
 	box-shadow: 0px 0px 8px #ff748c;
 }
 
-.tool-btn-container{
+.tool-btn-container {
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
-#quadratic_equation{
+#quadratic_equation {
 	font-weight: bold;
 }
 
-#answer{
+#answer {
 	display: none;
 }
 
-.node-soal{
+.node-soal {
 	background: white;
 	padding: 20px;
 	text-align: left;
@@ -178,17 +179,17 @@ body{
 	padding-top: 10px;
 }
 
-.done-answering{
+.done-answering {
 	text-align: center;
 }
 
-#done-btn{
+#done-btn {
 	padding-right: 30px;
 	padding-left: 30px;
 	padding-bottom: 50px;
 }
 
-.card-item-container{
+.card-item-container {
 	background: white;
 	padding: 20px;
 	text-align: center;
@@ -198,33 +199,33 @@ body{
 	width: 65%;
 }
 
-.pic img{
+.pic img {
 	height: 60px;
 }
 
-.sosmed-container a img{
+.sosmed-container a img {
 	height: 50px;
 }
 
-.sosmed-container a{
+.sosmed-container a {
 	padding-left: 15px;
-	padding-right: 15px;	
+	padding-right: 15px;
 }
 
-.title{
+.title {
 	font-weight: bolder;
 	color: #ff748c;
 	font-size: 1.25em;
 }
 
-.subtitle{
+.subtitle {
 	font-weight: bolder;
 	color: #ff748c;
 }
 
 /* modal style*/
 
-.modal{
+.modal {
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -234,11 +235,11 @@ body{
 	width: 100%;
 	height: 100%;
 	overflow: auto;
-	background-color: rgb(0,0,0);
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
 }
 
-.modal-content{
+.modal-content {
 	background-color: white;
 	margin: auto;
 	padding: 20px;
@@ -246,21 +247,21 @@ body{
 	width: 70%;
 }
 
-.close{
+.close {
 	color: #aaaaaa;
 	float: right;
 	font-size: 28px;
 	font-weight: bold;
 }
 
-.close:hover, .close:focus{
+.close:hover,
+.close:focus {
 	color: #000;
 	text-decoration: none;
 	cursor: pointer;
 }
 
-
-#history{
+#history {
 	text-align: center;
 	padding: 5px;
 	text-decoration: none;
@@ -269,17 +270,47 @@ body{
 	height: 50px;
 }
 
-#history a{
+#history a {
 	color: #ff748c;
 	text-decoration: none;
 	transition: 0.5s;
 	transition-property: filter;
 }
 
-#history a:hover{
+#history a:hover {
 	filter: brightness(50%);
 }
 
-#history a img{
+#history a img {
 	width: 35px;
+}
+
+h4 {
+	font-weight: 600;
+}
+
+.materi-container {
+	position: relative;
+	background: white;
+	padding: 20px;
+	border: 3px dashed #ff748c;
+}
+
+.materi-container {
+	margin-bottom: 20px;
+}
+
+.materi__title {
+	text-align: center;
+}
+
+.justify-me {
+	text-align: justify;
+}
+
+.center-img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 400px;
 }
