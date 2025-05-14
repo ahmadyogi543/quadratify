@@ -92,9 +92,7 @@ function hideSpin(){
 //mengambil data dari database
 function getData(data){
 	data = data.val();
-	let keys = Object.keys(data);
-	let soal = data[keys[Math.floor(Math.random()*keys.length)]];
-	soal = shuffle(soal);
+	soal = shuffle(data);
 	startCreateSoal(soal);
 	hideSpin();
 	showButton();
